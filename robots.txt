@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /demo-private-template/
+Disallow: /thanks.html
+
+Sitemap: https://yavo.ca/sitemap.xml

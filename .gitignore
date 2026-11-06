@@ -1,0 +1,3 @@
+_preview-server.cjs
+node_modules/
+.vercel/

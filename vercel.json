@@ -1,0 +1,17 @@
+{
+  "cleanUrls": false,
+  "headers": [
+    {
+      "source": "/demo-private-template/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }
+      ]
+    },
+    {
+      "source": "/thanks.html",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    }
+  ]
+}
