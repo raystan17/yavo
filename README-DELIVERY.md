@@ -94,7 +94,7 @@ Philco Cleaning and Ray's Cleaning are shown separately as a custom design demo 
 | `icon-192.png`, `icon-512.png`, `apple-touch-icon.png` | Home screen and manifest icons. |
 | `og-card.png` | 1200 by 630 social share image. |
 
-Colours: navy `#041E42`, orange `#FF4C00`, white `#FFFFFF`, off-white `#F4F7FB`. Orange is for the dot, the primary button, the eyebrow labels and small accents only. Buttons use navy text on orange so the contrast passes WCAG AA.
+Colours: navy `#041E42`, orange `#FF4C00`, white `#FFFFFF`, off-white `#F4F7FB`. Orange is for the dot, the primary button, the eyebrow labels and small accents only. Buttons use white text on orange.
 
 Fonts: Bricolage Grotesque (headings, weight 700) and Instrument Sans (body). Both are SIL Open Font License. The files in `assets/fonts/` are subset to Latin and Latin Extended and instanced (width and optical size axes removed) to keep them small. If you need other weights, download the originals from Google Fonts and re-subset.
 
