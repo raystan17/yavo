@@ -110,5 +110,5 @@ Fonts: Bricolage Grotesque (headings, weight 700) and Instrument Sans (body). Bo
 - Every internal link, anchor, gallery card (12 examples, Philco, Ray's, Morgan) checked at 1440 and 390 wide. No horizontal overflow, console clean.
 - Filters, search, empty state, mobile "Show all" button, "Use this style" picker, FAQ, before and after slider (mouse, touch and keyboard), missed-call demo, mobile menu and sticky call bar exercised.
 - Real FlowForm submission sent and received (HTTP 200).
-- Lighthouse (mobile): Accessibility 100, Best Practices 100, SEO 100. Performance depends on the hosting (Vercel compresses HTML, the local test server did not); check the live number with PageSpeed Insights at https://pagespeed.web.dev/ after each deploy.
+- PageSpeed Insights, mobile, live URL, 6 Nov 2026: Performance 99, Accessibility 100, Best Practices 100, SEO 100 (LCP 1.0 s, TBT 0 ms, CLS 0). Re-check at https://pagespeed.web.dev/ after each deploy.
 - No em dashes in the homepage copy. Example sites are fictional, carry the example banner, and contain no real business names, phone numbers, addresses or reviews.
