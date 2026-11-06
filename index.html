@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>YAVO | Websites for Local Service Businesses Across Canada</title>
 <meta name="description" content="YAVO builds and looks after websites and Google Business Profiles for local service businesses across Canada. Free 10-Minute Online Checkup. Fixed Canadian prices. You own your domain, site and photos.">
-<link rel="canonical" href="https://yavo.ca/">
+<link rel="canonical" href="https://yavo-web.vercel.app/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="YAVO">
 <meta property="og:locale" content="en_CA">
 <meta property="og:title" content="YAVO | Get found on Google. Get the call.">
 <meta property="og:description" content="Websites and Google profiles for local service businesses across Canada. Start with a free 10-minute online checkup.">
-<meta property="og:url" content="https://yavo.ca/">
-<meta property="og:image" content="https://yavo.ca/assets/morgan/deck-red-chairs.webp">
+<meta property="og:url" content="https://yavo-web.vercel.app/">
+<meta property="og:image" content="https://yavo-web.vercel.app/assets/morgan/deck-red-chairs.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b1f3a">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1f3a'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Arial' font-weight='800' font-size='34' fill='white'%3EY%3C/text%3E%3C/svg%3E">
@@ -39,7 +39,7 @@ section{padding:clamp(60px,8vw,104px) 0}.alt{background:var(--bg2)}.dark{backgro
 .muted{color:var(--muted)}
 .sh{max-width:760px;margin-bottom:42px}.sh h2{font-size:clamp(30px,4.2vw,50px);margin:12px 0 14px}.sh p{font-size:18.5px;color:var(--muted);margin:0}.dark .sh p{color:#c3d2e6}
 .hero{padding:clamp(48px,6vw,84px) 0;background:linear-gradient(180deg,#eef4fb, #fff)}
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero-grid{display:block;max-width:860px}
 .hero h1{font-size:clamp(38px,5.4vw,68px);margin:16px 0 20px}
 .hero h1 em{font-style:normal;color:var(--blue)}
 .hero .lead{font-size:clamp(18px,1.8vw,21px);color:var(--ink2);max-width:600px}
@@ -107,7 +107,7 @@ footer a{color:#fff}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"YAVO","url":"https://yavo.ca/","description":"Websites and Google Business Profiles for local service businesses across Canada.","address":{"@type":"PostalAddress","addressLocality":"Brandon","addressRegion":"MB","addressCountry":"CA"},"areaServed":"Canada","makesOffer":[{"@type":"Offer","name":"Get Found website build","priceCurrency":"CAD","price":"1500"},{"@type":"Offer","name":"Care plan","priceCurrency":"CAD","price":"79"},{"@type":"Offer","name":"Growth plan","priceCurrency":"CAD","price":"199"}]}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"YAVO","url":"https://yavo-web.vercel.app/","description":"Websites and Google Business Profiles for local service businesses across Canada.","address":{"@type":"PostalAddress","addressLocality":"Brandon","addressRegion":"MB","addressCountry":"CA"},"areaServed":"Canada","makesOffer":[{"@type":"Offer","name":"Get Found website build","priceCurrency":"CAD","price":"1500"},{"@type":"Offer","name":"Care plan","priceCurrency":"CAD","price":"79"},{"@type":"Offer","name":"Growth plan","priceCurrency":"CAD","price":"199"}]}
 </script>
 </head>
 <body>
@@ -115,7 +115,7 @@ footer a{color:#fff}
 <header class="hdr"><div class="wrap">
 <a class="logo" href="#top" aria-label="YAVO home">YAVO<span>.</span><small>Websites for local service businesses</small></a>
 <nav class="nav" aria-label="Main"><a href="#checkup">Free checkup</a><a href="#prices">Prices</a><a href="#proof">Proof</a><a href="#faq">FAQ</a></nav>
-<a class="btn btn-pri" href="#checkup" data-event="cta_header_checkup" style="padding:12px 18px">Free checkup</a>
+<a class="btn btn-ghost" href="mailto:yavowebsites@gmail.com" data-event="cta_header_email" style="padding:12px 16px">Email us</a><a class="btn btn-pri" href="#checkup" data-event="cta_header_checkup" style="padding:12px 18px">Free checkup</a>
 </div></header>
 
 <main id="main">
@@ -126,13 +126,43 @@ footer a{color:#fff}
 <p class="lead">YAVO builds and looks after websites and Google Business Profiles for cleaning companies, trades, landscapers and other local service businesses. Get found on Google. Make it one tap to call or request a quote. We keep everything running so you never have to touch it.</p>
 <div class="ctas"><a class="btn btn-pri" href="#checkup" data-event="cta_hero_checkup">Get my free 10-minute checkup</a><a class="btn btn-ghost" href="#prices" data-event="cta_hero_prices">See packages and prices</a></div>
 <div class="trustline"><span>Fixed Canadian prices</span><span>You own your domain, site and photos</span><span>Free checkup anywhere in Canada</span></div>
-</div>
-<div>
-<div class="hero-photo"><img src="assets/morgan/deck-red-chairs.webp" alt="Finished deck with gazebo built by Morgan Exterior Solutions, a YAVO client in Brandon" width="1080" height="626" fetchpriority="high"></div>
-<p class="photo-cap">Real client work: Morgan Exterior Solutions, Brandon, Manitoba. Photo from the client gallery. See the proof section below.</p>
+<p style="margin:18px 0 0"><a href="https://morgan-exterior-solutions.vercel.app/" target="_blank" rel="noopener" data-event="cta_hero_live_client">See our live client site &#8594;</a></p>
 </div>
 </div></section>
 
+<section class="alt" id="proof"><div class="wrap">
+<div class="sh"><span class="kick">Proof, labelled honestly</span><h2>Client 01 is live. Everything else says what it is.</h2><p>Our first market was Brandon, Manitoba. That is where our first paying client and our first batch of concept sites came from. It is our starting point, not our service limit.</p></div>
+
+<article class="card" style="padding:0;overflow:hidden;margin-bottom:22px">
+<div class="split" style="gap:0">
+<div style="padding:30px"><span class="tag client">Client 01 · Live client</span><h3 style="font-size:30px;margin:14px 0 10px">Morgan Exterior Solutions, Brandon</h3><p class="muted">Morgan Exterior Solutions is our first paying client. Their live website is hosted and looked after by YAVO on the Growth plan. The site uses real job photos and real 5.0 star Google reviews, quoted word for word on the client site.</p><ul class="checks" style="margin-top:16px"><li><span>Live client website, built and hosted by YAVO</span></li><li><span>Real photos of decks, fences and exterior work</span></li><li><span>Drag the slider below to compare real before and after photos</span></li></ul></div>
+<div><img src="assets/morgan/cedar-fence.webp" alt="New cedar fence built by Morgan Exterior Solutions in the Brandon area" width="1080" height="750" loading="lazy" style="height:100%;object-fit:cover"></div>
+</div></article>
+
+<h3 style="font-size:24px;margin:26px 0 8px;text-align:center">Real before and after: gazebo deck rebuild</h3>
+<p class="muted" style="text-align:center;max-width:700px;margin:0 auto 18px">Both photos are real Morgan Exterior Solutions job photos of the same deck. Drag the handle to compare.</p>
+<div class="ba" style="--pos:50%"><span class="lb" style="left:12px">Before</span><span class="lb" style="right:12px">After</span><img src="assets/morgan/gazebo-deck-before.webp" alt="Gazebo deck before rebuild, worn painted boards" width="765" height="896" loading="lazy"><img class="after" src="assets/morgan/gazebo-deck-after.webp" alt="Gazebo deck after rebuild with new deck and steps" width="765" height="896" loading="lazy"><div class="bar"></div><input type="range" min="0" max="100" value="50" aria-label="Compare before and after photos" data-event="slider_before_after"></div>
+
+<div style="margin-top:36px">
+<h3 id="styles" style="font-size:26px;margin-bottom:8px">Example styles: tap any card to view the example site</h3>
+<p class="muted" style="max-width:760px">These are example websites with made up business names. <strong>Examples are not clients, are not live businesses, and claim no results.</strong> Tap any card to open the working example site in a new tab. Every example uses neutral colour thumbnails here, sample visuals labelled as samples, and an example banner on the site itself.</p>
+<div class="gallery-tools"><input type="search" id="gSearch" placeholder="Search styles: try Sparkle, Prairie, Summit, Bistro" aria-label="Search example styles" data-event="gallery_search"><button class="chip" type="button" data-filter="all" aria-pressed="true">All</button><button class="chip" type="button" data-filter="cleaning" aria-pressed="false">Cleaning</button><button class="chip" type="button" data-filter="trades" aria-pressed="false">Trades</button><button class="chip" type="button" data-filter="exterior" aria-pressed="false">Exterior and property</button><button class="chip" type="button" data-filter="restaurant" aria-pressed="false">Restaurant</button></div>
+<div class="cards" id="gallery"></div>
+<p class="muted" id="gCount" style="margin-top:14px;font-size:14.5px"></p>
+</div>
+
+<div class="cards" style="margin-top:22px">
+<a class="card" href="https://philco-cleaning-web.vercel.app/" target="_blank" rel="noopener" data-event="demo_philco_open" style="text-decoration:none;color:inherit;display:block"><span class="tag concept">Custom retro design demo · Not live</span><h3 style="margin-top:12px">Philco Cleaning</h3><p>Philco Cleaning: a custom retro-style design demo. Built to show a different design direction, with the retro look chosen on purpose, not a template. Not a live client site, no results to claim.</p><p style="margin-top:12px"><strong style="color:var(--blue)">View example site &#8594;</strong></p></a>
+<a class="card" href="https://rays-cleaning.vercel.app/" target="_blank" rel="noopener" data-event="demo_rays_open" style="text-decoration:none;color:inherit;display:block"><span class="tag concept">Early practice concept · Not a business</span><h3 style="margin-top:12px">Ray's Cleaning</h3><p>Ray's Cleaning was an early practice concept. It is not an opened business, not a client, and is never counted as proof.</p><p style="margin-top:12px"><strong style="color:var(--blue)">View example site &#8594;</strong></p></a>
+<article class="honesty"><h3>What we will not claim</h3><p>No invented client counts, revenue, rankings or review scores. No concept called a client. No sample photo called real work. If a fact is not confirmed yet, the live site leaves it out or marks it clearly.</p></article>
+</div>
+
+<div style="margin-top:36px"><h3 style="font-size:26px;margin-bottom:14px">Proof by city</h3>
+<div class="cards">
+<article class="card" data-city="brandon"><span class="tag client">First market</span><h3 style="margin-top:12px">Brandon, Manitoba</h3><p>Client 01 live: Morgan Exterior Solutions. First concept batch: 25 labelled concept previews across cleaning, trades, exterior work and restaurants.</p></article>
+<article class="card" data-city="next"><span class="tag concept">Your city next</span><h3 style="margin-top:12px">Every new city starts the same way</h3><p>Free checkups first. Then a fresh batch of labelled concept sites for that city, built from real local businesses, before anyone is asked to pay.</p><p style="margin-top:12px"><a class="btn btn-pri" href="#checkup" data-event="cta_city_checkup" style="padding:12px 18px">Bring YAVO to my city</a></p></article>
+</div></div>
+</div></section>
 <section id="problem"><div class="wrap">
 <div class="sh"><span class="kick">The problem</span><h2>A weak site quietly costs you calls</h2><p>Most customers find a local business on their phone. If the site is hard to use on a phone, the job goes to the next name on Google.</p></div>
 <div class="cards">
@@ -156,10 +186,10 @@ footer a{color:#fff}
 </ol>
 </div>
 <div>
-<form class="q" method="POST" action="https://formsubmit.co/REPLACE_WITH_YAVO_INBOX_EMAIL" aria-label="Free checkup request">
+<form class="q" method="POST" action="https://formsubmit.co/yavowebsites@gmail.com" aria-label="Free checkup request">
 <input type="hidden" name="_subject" value="YAVO free checkup request">
 <input type="hidden" name="_template" value="table">
-<input type="hidden" name="_next" value="https://yavo.ca/thanks.html">
+<input type="hidden" name="_next" value="https://yavo-web.vercel.app/thanks.html">
 <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 <p style="margin:0"><strong>What you get:</strong> a one-page summary in plain language, our top 3 fixes, and honest notes on what you can fix free yourself. No pressure. If you want our help, we quote the price up front. The form takes about a minute to send.</p>
 <div class="row"><div><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required data-event="form_step_name"></div>
@@ -192,13 +222,7 @@ footer a{color:#fff}
 </div></div>
 </div></section>
 
-<section id="compare"><div class="wrap">
-<div class="sh"><span class="kick">Your other options</span><h2>Why owners pick a looked after site</h2></div>
-<div class="cards">
-<article class="card"><h3>Do it yourself</h3><p>Low cash cost, high time cost. You write, design, fix the phone layout, set up Google and keep it updated between jobs. If that is working, keep it and use the free checkup to find the gaps.</p></article>
-<article class="card"><h3>Hire a large agency</h3><p>Useful for big custom projects. For a 5 page local site it can mean discovery phases, account managers and a process built for larger organizations, not a busy owner who needs the phone to ring.</p></article>
-<article class="card"><h3>Work with YAVO</h3><p>See the site built, approve it, launch on your own domain, then we host and update it. Fixed Canadian prices, plain language, and proof labelled for exactly what it is.</p></article>
-</div></div></section>
+
 
 <section class="alt" id="prices"><div class="wrap">
 <div class="sh"><span class="kick">Fixed Canadian prices</span><h2>Know the price before we start</h2><p>All prices are in Canadian dollars. If a price is not listed here, we quote it in writing before any work starts.</p></div>
@@ -222,39 +246,7 @@ footer a{color:#fff}
 <article class="card"><span class="num">04</span><h3>We keep it running</h3><p>Hosting, backups, checks and edits are handled for you. You run the business. We look after the website.</p></article>
 </div></div></section>
 
-<section class="alt" id="proof"><div class="wrap">
-<div class="sh"><span class="kick">Proof, labelled honestly</span><h2>Client 01 is live. Everything else says what it is.</h2><p>Our first market was Brandon, Manitoba. That is where our first paying client and our first batch of concept sites came from. It is our starting point, not our service limit.</p></div>
 
-<article class="card" style="padding:0;overflow:hidden;margin-bottom:22px">
-<div class="split" style="gap:0">
-<div style="padding:30px"><span class="tag client">Client 01 · Live client</span><h3 style="font-size:30px;margin:14px 0 10px">Morgan Exterior Solutions, Brandon</h3><p class="muted">Morgan Exterior Solutions is our first paying client. Their live website is hosted and looked after by YAVO on the Growth plan. The site uses real job photos and real 5.0 star Google reviews, quoted word for word on the client site.</p><ul class="checks" style="margin-top:16px"><li><span>Live client website, built and hosted by YAVO</span></li><li><span>Real photos of decks, fences and exterior work</span></li><li><span>Drag the slider below to compare real before and after photos</span></li></ul></div>
-<div><img src="assets/morgan/cedar-fence.webp" alt="New cedar fence built by Morgan Exterior Solutions in the Brandon area" width="1080" height="750" loading="lazy" style="height:100%;object-fit:cover"></div>
-</div></article>
-
-<h3 style="font-size:24px;margin:26px 0 8px;text-align:center">Real before and after: gazebo deck rebuild</h3>
-<p class="muted" style="text-align:center;max-width:700px;margin:0 auto 18px">Both photos are real Morgan Exterior Solutions job photos of the same deck. Drag the handle to compare.</p>
-<div class="ba" style="--pos:50%"><span class="lb" style="left:12px">Before</span><span class="lb" style="right:12px">After</span><img src="assets/morgan/gazebo-deck-before.webp" alt="Gazebo deck before rebuild, worn painted boards" width="765" height="896" loading="lazy"><img class="after" src="assets/morgan/gazebo-deck-after.webp" alt="Gazebo deck after rebuild with new deck and steps" width="765" height="896" loading="lazy"><div class="bar"></div><input type="range" min="0" max="100" value="50" aria-label="Compare before and after photos" data-event="slider_before_after"></div>
-
-<div style="margin-top:36px">
-<h3 style="font-size:26px;margin-bottom:8px">Concept gallery from our first city</h3>
-<p class="muted" style="max-width:760px">These are concept previews built to show what a phone first site could look like. <strong>Concepts are not clients, are not live, and claim no results.</strong> Each business gets its own private preview link. Nothing about a business and its current site is posted publicly here.</p>
-<div class="gallery-tools"><input type="search" id="gSearch" placeholder="Search concepts: try cleaning, plumbing, restaurant" aria-label="Search concept gallery" data-event="gallery_search"><button class="chip" type="button" data-filter="all" aria-pressed="true">All</button><button class="chip" type="button" data-filter="cleaning" aria-pressed="false">Cleaning</button><button class="chip" type="button" data-filter="trades" aria-pressed="false">Trades</button><button class="chip" type="button" data-filter="exterior" aria-pressed="false">Exterior and property</button><button class="chip" type="button" data-filter="restaurant" aria-pressed="false">Restaurant</button></div>
-<div class="cards" id="gallery"></div>
-<p class="muted" id="gCount" style="margin-top:14px;font-size:14.5px"></p>
-</div>
-
-<div class="cards" style="margin-top:22px">
-<article class="card"><span class="tag concept">Demo build · Not live</span><h3 style="margin-top:12px">Philco Cleaning</h3><p>Philco Cleaning is a demo build only. It is not a live client site and it has produced no results to claim. We show it only as an example of build quality.</p></article>
-<article class="card"><span class="tag concept">Not a business</span><h3 style="margin-top:12px">Ray's Cleaning</h3><p>Ray's Cleaning was an early practice concept. It is not an opened business, not a client, and is never counted as proof.</p></article>
-<article class="honesty"><h3>What we will not claim</h3><p>No invented client counts, revenue, rankings or review scores. No concept called a client. No sample photo called real work. If a fact is not confirmed yet, the live site leaves it out or marks it clearly.</p></article>
-</div>
-
-<div style="margin-top:36px"><h3 style="font-size:26px;margin-bottom:14px">Proof by city</h3>
-<div class="cards">
-<article class="card" data-city="brandon"><span class="tag client">First market</span><h3 style="margin-top:12px">Brandon, Manitoba</h3><p>Client 01 live: Morgan Exterior Solutions. First concept batch: 25 labelled concept previews across cleaning, trades, exterior work and restaurants.</p></article>
-<article class="card" data-city="next"><span class="tag concept">Your city next</span><h3 style="margin-top:12px">Every new city starts the same way</h3><p>Free checkups first. Then a fresh batch of labelled concept sites for that city, built from real local businesses, before anyone is asked to pay.</p><p style="margin-top:12px"><a class="btn btn-pri" href="#checkup" data-event="cta_city_checkup" style="padding:12px 18px">Bring YAVO to my city</a></p></article>
-</div></div>
-</div></section>
 
 <section id="faq"><div class="wrap">
 <div class="sh" style="margin-inline:auto;text-align:center"><span class="kick">Straight answers</span><h2>Questions owners ask us</h2></div>
@@ -280,7 +272,7 @@ footer a{color:#fff}
 <footer><div class="wrap">
 <p style="font-size:22px;font-weight:900;color:#fff;margin:0 0 8px">YAVO<span style="color:var(--amber)">.</span></p>
 <p style="max-width:560px">Websites and Google Business Profiles for local service businesses across Canada. Based in Brandon, Manitoba. Our first market was Brandon. Our checkup and packages are available anywhere in Canada.</p>
-<p><a href="#checkup" data-event="cta_footer_checkup">Free 10-Minute Online Checkup</a> · <a href="#prices">Packages and prices</a> · <a href="privacy.html">Privacy policy</a></p>
+<p><a href="#checkup" data-event="cta_footer_checkup">Free 10-Minute Online Checkup</a> · <a href="#prices">Packages and prices</a> · <a href="mailto:yavowebsites@gmail.com" data-event="cta_footer_email">yavowebsites@gmail.com</a> · <a href="privacy.html">Privacy policy</a></p>
 <p style="font-size:13.5px;color:#9fb4cf">© 2026 YAVO. Prices on this page are in Canadian dollars. Concept sites are labelled concepts and are not clients.</p>
 </div></footer>
 
@@ -301,18 +293,14 @@ document.querySelectorAll(".ba input").forEach(function(r){
   r.addEventListener("input", function(){ r.closest(".ba").style.setProperty("--pos", r.value + "%"); });
 });
 var concepts = [
- {t:"Residential and commercial cleaning", c:"cleaning", col:"#2f6b4f", n:"Cleaning concept 01"},
- {t:"Commercial and janitorial cleaning", c:"cleaning", col:"#7a4a12", n:"Cleaning concept 02"},
- {t:"Home cleaning services", c:"cleaning", col:"#5b3a8a", n:"Cleaning concept 03"},
- {t:"Plumbing and heating", c:"trades", col:"#a12626", n:"Trades concept 01"},
- {t:"Electrical services", c:"trades", col:"#8a6d00", n:"Trades concept 02"},
- {t:"Roofing and siding", c:"trades", col:"#8a4a1f", n:"Trades concept 03"},
- {t:"Auto repair and service", c:"trades", col:"#14507a", n:"Trades concept 04"},
- {t:"Construction and concrete", c:"trades", col:"#6b4a1f", n:"Trades concept 05"},
- {t:"Landscaping and property care", c:"exterior", col:"#33691e", n:"Exterior concept 01"},
- {t:"Property maintenance", c:"exterior", col:"#0f766e", n:"Exterior concept 02"},
- {t:"Spray foam insulation", c:"exterior", col:"#14507a", n:"Exterior concept 03"},
- {t:"Family restaurant and buffet", c:"restaurant", col:"#a3152f", n:"Restaurant concept 01"}
+ {t:"Sparkle Cleaning Co.", d:"Residential and commercial cleaning example", c:"cleaning", col:"#2f6b4f", n:"Sparkle Cleaning Co.", u:"examples/sparkle-cleaning/"},
+ {t:"Prairie Landscaping", d:"Landscaping and property care example", c:"exterior", col:"#33691e", n:"Prairie Landscaping", u:"examples/prairie-landscaping/"},
+ {t:"Summit Decks & Fences", d:"Decks, fences and exterior builds example", c:"exterior", col:"#6b4a1f", n:"Summit Decks & Fences", u:"examples/summit-decks/"},
+ {t:"The Corner Bistro", d:"Restaurant, menu and pickup example", c:"restaurant", col:"#a3152f", n:"The Corner Bistro", u:"examples/corner-bistro/"},
+ {t:"Northline Plumbing & Heating", d:"Plumbing, heating and emergency calls example", c:"trades", col:"#a12626", n:"Northline Plumbing & Heating", u:"examples/northline-plumbing/"},
+ {t:"BrightSpark Electric", d:"Electrical services example", c:"trades", col:"#8a6d00", n:"BrightSpark Electric", u:"examples/brightspark-electric/"},
+ {t:"TruePeak Roofing", d:"Roofing and siding example", c:"trades", col:"#7a3b12", n:"TruePeak Roofing", u:"examples/truepeak-roofing/"},
+ {t:"River City Auto Care", d:"Auto repair and booking example", c:"trades", col:"#14507a", n:"River City Auto Care", u:"examples/rivercity-auto/"}
 ];
 var gallery = document.getElementById("gallery");
 var gCount = document.getElementById("gCount");
@@ -326,12 +314,14 @@ function renderGallery(){
     var okSearch = (item.t + " " + item.n + " " + item.c).toLowerCase().indexOf(q) > -1;
     if(!okFilter || !okSearch) return;
     shown++;
-    var el = document.createElement("article");
-    el.className = "gcard";
-    el.innerHTML = "<div class='ghero' style='background:" + item.col + "'>" + item.n.split(" ")[0].charAt(0) + "</div><span class='tag concept'>Concept preview · Not a client</span><h3 style='margin:12px 0 8px'>" + item.t + "</h3><p class='muted' style='margin:0'>Labelled concept from our first batch in Brandon, Manitoba. Built to show layout, call buttons and quote flow on a phone. The business receives its own private preview link.</p>";
+    var el = document.createElement("a");
+    el.className = "gcard"; el.href = item.u; el.target = "_blank"; el.rel = "noopener";
+    el.setAttribute("data-event", "style_card_open");
+    el.style.textDecoration = "none"; el.style.color = "inherit"; el.style.display = "block";
+    el.innerHTML = "<div class='ghero' style='background:" + item.col + "'>" + item.n.charAt(0) + "</div><span class='tag concept'>Example site · Not a real business</span><h3 style='margin:12px 0 8px'>" + item.t + "</h3><p class='muted' style='margin:0 0 12px'>" + item.d + ". Working example with call and quote buttons, built for phones.</p><strong style='color:var(--blue)'>View example site &#8594;</strong>";
     gallery.appendChild(el);
   });
-  gCount.textContent = "Showing " + shown + " of " + concepts.length + " teaser concepts. Full concept batch: 25 sites from Brandon, our first market.";
+  gCount.textContent = "Showing " + shown + " of " + concepts.length + " example styles. Each one opens a working example site in a new tab.";
 }
 document.getElementById("gSearch").addEventListener("input", renderGallery);
 document.querySelectorAll("[data-filter]").forEach(function(btn){
