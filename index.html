@@ -20,7 +20,7 @@
 <meta name="twitter:title" content="YAVO | Get found on Google. Get the call.">
 <meta name="twitter:description" content="Websites and Google Business Profiles for local service businesses across Canada. Free 10-minute online checkup.">
 <meta name="twitter:image" content="https://yavo-web.vercel.app/assets/brand/og-card.png">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#041E42">
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/brand/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
@@ -80,21 +80,23 @@ section{padding:clamp(60px,8vw,104px) 0;position:relative;scroll-margin-top:74px
 .btn-sm{padding:11px 16px;font-size:15px;border-radius:12px}
 
 /* header */
-.hdr{position:sticky;top:0;z-index:70;background:#fff;color:var(--navy);border-bottom:1px solid transparent;box-shadow:0 0 0 rgba(4,30,66,0);transition:box-shadow .28s ease,border-color .28s ease}
-.hdr.lift{border-bottom-color:var(--line);box-shadow:0 10px 28px -18px rgba(4,30,66,.55)}
+.hdr{position:sticky;top:0;z-index:70;background-color:transparent;color:#fff;border-bottom:1px solid transparent;box-shadow:0 0 0 rgba(4,30,66,0);transition:background-color .28s ease,color .28s ease,border-color .28s ease,box-shadow .28s ease}
+.hdr.scrolled,body.locked .hdr{background-color:#fff;color:var(--navy);border-bottom-color:var(--line);box-shadow:0 10px 28px -18px rgba(4,30,66,.55)}
 .hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:72px}
-.logo{display:inline-flex;align-items:center;text-decoration:none;color:var(--navy);padding:10px 0;min-height:48px}
+.logo{display:inline-flex;align-items:center;text-decoration:none;color:inherit;padding:10px 0;min-height:48px}
 .logo svg{height:26px;width:auto}
-.logo path{fill:var(--navy)}
+.logo path{fill:currentColor}
 .nav{display:flex;gap:26px;font-size:15px;font-weight:600}
-.nav a{text-decoration:none;color:var(--navy-2);position:relative;padding:6px 0}
-.nav a:hover{color:var(--navy)}
+.nav a{text-decoration:none;color:inherit;position:relative;padding:6px 0}
+.nav a:hover{color:inherit}
 .nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--orange);transition:right .22s}
 .nav a:hover::after{right:0}
 .hdr-cta{display:flex;align-items:center;gap:10px}
-.hdr-cta .tel{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:15px;color:var(--navy);padding:10px 12px;border-radius:12px}
-.hdr-cta .tel:hover{background:var(--off)}
-.menu-btn{display:none;background:#fff;border:1.5px solid var(--line-2);color:var(--navy);border-radius:12px;width:44px;height:44px;place-items:center;cursor:pointer;position:relative;z-index:81}
+.hdr-cta .tel{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:15px;color:inherit;padding:10px 12px;border-radius:12px;transition:background-color .28s ease}
+.hdr-cta .tel:hover{background:rgba(255,255,255,.1)}
+.hdr.scrolled .hdr-cta .tel:hover,body.locked .hdr .hdr-cta .tel:hover{background:var(--off)}
+.menu-btn{display:none;background:transparent;border:1.5px solid rgba(255,255,255,.35);color:inherit;border-radius:12px;width:44px;height:44px;place-items:center;cursor:pointer;position:relative;z-index:81;transition:background-color .28s ease,border-color .28s ease}
+.hdr.scrolled .menu-btn,body.locked .hdr .menu-btn{background:#fff;border-color:var(--line-2)}
 .menu-btn .x{display:none}
 .menu-btn[aria-expanded=true] .h{display:none}
 .menu-btn[aria-expanded=true] .x{display:block}
@@ -104,7 +106,7 @@ section{padding:clamp(60px,8vw,104px) 0;position:relative;scroll-margin-top:74px
 body.locked{overflow:hidden}
 
 /* hero */
-.hero{background:var(--navy);color:#fff;padding:clamp(48px,7vw,96px) 0 clamp(56px,7vw,96px);overflow:hidden;position:relative}
+.hero{background:var(--navy);color:#fff;margin-top:-72px;padding:calc(72px + clamp(48px,7vw,96px)) 0 clamp(56px,7vw,96px);overflow:hidden;position:relative}
 .hero::before{content:"";position:absolute;inset:auto -10% -40% auto;width:60vw;height:60vw;max-width:820px;max-height:820px;border-radius:50%;background:radial-gradient(circle,rgba(255,76,0,.22),transparent 62%);pointer-events:none}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,72px);align-items:center;position:relative}
 .hero h1{font-size:clamp(40px,4.6vw,64px);margin:18px 0 20px;text-wrap:balance}
@@ -347,6 +349,7 @@ footer .fine{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,
   body{font-size:16px}
   .wrap{width:min(1180px,100% - 32px)}
   .hdr .wrap{height:64px}.mnav{top:64px}
+  .hero{margin-top:-64px;padding-top:calc(64px + clamp(48px,7vw,96px))}
   .probs{grid-template-columns:1fr}.grid{grid-template-columns:1fr}
   .q .row{grid-template-columns:1fr}
   .fgrid{grid-template-columns:1fr}
@@ -658,27 +661,11 @@ mnav.addEventListener("click", function(e){ if(e.target.tagName === "A") closeMe
 document.addEventListener("keydown", function(e){ if(e.key === "Escape" && mnav.classList.contains("open")){ closeMenu(); menuBtn.focus(); } });
 window.addEventListener("resize", function(){ if(window.innerWidth > 900 && mnav.classList.contains("open")) closeMenu(); });
 
-/* white bar lifts only once it sits on a light section */
+/* transparent over the hero, white once the page has moved */
 var hdr = document.querySelector(".hdr");
-var hdrTick = false;
-function headerLift(){
-  hdrTick = false;
-  var probe = document.elementFromPoint(Math.min(24, window.innerWidth - 8), hdr.getBoundingClientRect().bottom + 8);
-  var dark = false;
-  while(probe && probe !== document.documentElement){
-    var bg = getComputedStyle(probe).backgroundColor;
-    var m = bg && bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
-    if(m && (m[4] === undefined || parseFloat(m[4]) > 0.4)){
-      dark = (0.2126 * m[1] + 0.7152 * m[2] + 0.0722 * m[3]) < 90;
-      break;
-    }
-    probe = probe.parentElement;
-  }
-  hdr.classList.toggle("lift", !dark && window.scrollY > 8);
-}
-window.addEventListener("scroll", function(){ if(!hdrTick){ hdrTick = true; requestAnimationFrame(headerLift); } }, {passive:true});
-window.addEventListener("resize", headerLift);
-headerLift();
+function setHeader(){ hdr.classList.toggle("scrolled", window.scrollY > 24); }
+window.addEventListener("scroll", setHeader, {passive:true});
+setHeader();
 
 /* reveal */
 if("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches){
