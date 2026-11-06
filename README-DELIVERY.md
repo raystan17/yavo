@@ -12,7 +12,7 @@ Stack: static HTML, no build step. Deploy: push this folder to GitHub, import to
 - `robots.txt`, `sitemap.xml`, `vercel.json`
 
 ## Placeholders the owner must fill before launch
-1. Form inbox: connected Nov 6, 2026 to `colesales@proton.me` via the FormSubmit endpoint (same pattern as the Morgan site). A test POST on Nov 6 returned a FormSubmit server 522, so submit one real test from the live site, then click the FormSubmit activation email in the Gmail inbox. Until that click, requests are not forwarded. FlowForm note: the Morgan site service on file is FormSubmit, so that proven endpoint was used.
+1. Form inbox: connected Nov 6, 2026 to `colesales@proton.me` via **FlowForm** (`https://flowform.to/colesales@proton.me`). Owner rule: FlowForm is what works, do NOT use FormSubmit. A live test POST on Nov 6, 2026 returned HTTP 200 `{"success":true}`. Check the Proton inbox for the test message. Standing rules saved in the owner notes.
 2. Domain: `yavo.ca` was not resolving, so canonical, Open Graph and sitemap URLs temporarily point to `https://yavo-web.vercel.app/` (updated Nov 6, 2026). Buy `yavo.ca` on Porkbun, connect it in Vercel, then switch those URLs back to `https://yavo.ca/` in `index.html`, `sitemap.xml` and `robots.txt`.
 3. Privacy page: updated Nov 6, 2026 with contact YAVO at `colesales@proton.me` and phone `204-901-2941` (confirmed by owner Nov 6, 2026). The number is published as tap to call in the hero, sticky mobile bar, FAQ, footer and privacy page.
 4. Business phone (optional): no public YAVO phone number was confirmed, so the sticky bar uses Free checkup and See prices instead of a call button. If a business number is confirmed, add a Call button and update the footer.
