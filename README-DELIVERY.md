@@ -1,4 +1,4 @@
-# YAVO site delivery
+﻿# YAVO site delivery
 
 Brand picked by owner: **YAVO** (yavo.ca). Positioning and copy approved by owner before build.
 Stack: static HTML, no build step. Deploy: push this folder to GitHub, import to Vercel, connect yavo.ca from Porkbun.
@@ -12,9 +12,9 @@ Stack: static HTML, no build step. Deploy: push this folder to GitHub, import to
 - `robots.txt`, `sitemap.xml`, `vercel.json`
 
 ## Placeholders the owner must fill before launch
-1. Form inbox: connected Nov 6, 2026 to `yavowebsites@gmail.com` via the FormSubmit endpoint (same pattern as the Morgan site). A test POST on Nov 6 returned a FormSubmit server 522, so submit one real test from the live site, then click the FormSubmit activation email in the Gmail inbox. Until that click, requests are not forwarded. FlowForm note: the Morgan site service on file is FormSubmit, so that proven endpoint was used.
+1. Form inbox: connected Nov 6, 2026 to `colesales@proton.me` via the FormSubmit endpoint (same pattern as the Morgan site). A test POST on Nov 6 returned a FormSubmit server 522, so submit one real test from the live site, then click the FormSubmit activation email in the Gmail inbox. Until that click, requests are not forwarded. FlowForm note: the Morgan site service on file is FormSubmit, so that proven endpoint was used.
 2. Domain: `yavo.ca` was not resolving, so canonical, Open Graph and sitemap URLs temporarily point to `https://yavo-web.vercel.app/` (updated Nov 6, 2026). Buy `yavo.ca` on Porkbun, connect it in Vercel, then switch those URLs back to `https://yavo.ca/` in `index.html`, `sitemap.xml` and `robots.txt`.
-3. Privacy page: updated Nov 6, 2026 with contact YAVO at `yavowebsites@gmail.com`. No phone is published until the owner confirms a business number. Add that number here and as a tap to call button when confirmed.
+3. Privacy page: updated Nov 6, 2026 with contact YAVO at `colesales@proton.me`. No phone is published until the owner confirms a business number. Add that number here and as a tap to call button when confirmed.
 4. Business phone (optional): no public YAVO phone number was confirmed, so the sticky bar uses Free checkup and See prices instead of a call button. If a business number is confirmed, add a Call button and update the footer.
 5. Analytics: button and form events push to `window.dataLayer` with `data-event` names. Connect Google Analytics or Tag Manager before launch if tracking is wanted, and disclose analytics in the privacy policy.
 6. Morgan review quote (optional upgrade): the proof section states the verified 5.0 star fact. If a verbatim review is added, paste it word for word from Google with the reviewer name exactly as shown. Do not paraphrase it.
@@ -59,3 +59,4 @@ The pitch, step by step:
 6. If they say no, leave the free fixes, thank them, mark do not contact if they ask, and move on. One polite follow up only where CASL allows it, then stop.
 
 Daily routine: 5 checkups prepared, 5 first contacts, every reply answered the same day, every opt out logged. Track city by city so each new city gets its own fresh concept batch before outreach starts there.
+
