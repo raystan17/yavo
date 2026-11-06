@@ -20,7 +20,7 @@
 <meta name="twitter:title" content="YAVO | Get found on Google. Get the call.">
 <meta name="twitter:description" content="Websites and Google Business Profiles for local service businesses across Canada. Free 10-minute online checkup.">
 <meta name="twitter:image" content="https://yavo-web.vercel.app/assets/brand/og-card.png">
-<meta name="theme-color" content="#041E42">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/brand/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
@@ -80,19 +80,21 @@ section{padding:clamp(60px,8vw,104px) 0;position:relative;scroll-margin-top:74px
 .btn-sm{padding:11px 16px;font-size:15px;border-radius:12px}
 
 /* header */
-.hdr{position:sticky;top:0;z-index:70;background:rgba(4,30,66,.92);backdrop-filter:saturate(1.3) blur(14px);-webkit-backdrop-filter:saturate(1.3) blur(14px);border-bottom:1px solid var(--navy-line);color:#fff}
+.hdr{position:sticky;top:0;z-index:70;background:#fff;color:var(--navy);border-bottom:1px solid transparent;box-shadow:0 0 0 rgba(4,30,66,0);transition:box-shadow .28s ease,border-color .28s ease}
+.hdr.lift{border-bottom-color:var(--line);box-shadow:0 10px 28px -18px rgba(4,30,66,.55)}
 .hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:72px}
-.logo{display:inline-flex;align-items:center;text-decoration:none;color:#fff;padding:10px 0;min-height:48px}
+.logo{display:inline-flex;align-items:center;text-decoration:none;color:var(--navy);padding:10px 0;min-height:48px}
 .logo svg{height:26px;width:auto}
+.logo path{fill:var(--navy)}
 .nav{display:flex;gap:26px;font-size:15px;font-weight:600}
-.nav a{text-decoration:none;color:rgba(255,255,255,.82);position:relative;padding:6px 0}
-.nav a:hover{color:#fff}
+.nav a{text-decoration:none;color:var(--navy-2);position:relative;padding:6px 0}
+.nav a:hover{color:var(--navy)}
 .nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--orange);transition:right .22s}
 .nav a:hover::after{right:0}
 .hdr-cta{display:flex;align-items:center;gap:10px}
-.hdr-cta .tel{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:15px;color:#fff;padding:10px 12px;border-radius:12px}
-.hdr-cta .tel:hover{background:rgba(255,255,255,.08)}
-.menu-btn{display:none;background:none;border:1.5px solid rgba(255,255,255,.3);color:#fff;border-radius:12px;width:44px;height:44px;place-items:center;cursor:pointer;position:relative;z-index:81}
+.hdr-cta .tel{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:15px;color:var(--navy);padding:10px 12px;border-radius:12px}
+.hdr-cta .tel:hover{background:var(--off)}
+.menu-btn{display:none;background:#fff;border:1.5px solid var(--line-2);color:var(--navy);border-radius:12px;width:44px;height:44px;place-items:center;cursor:pointer;position:relative;z-index:81}
 .menu-btn .x{display:none}
 .menu-btn[aria-expanded=true] .h{display:none}
 .menu-btn[aria-expanded=true] .x{display:block}
@@ -655,6 +657,28 @@ menuBtn.addEventListener("click", function(){ var open = !mnav.classList.contain
 mnav.addEventListener("click", function(e){ if(e.target.tagName === "A") closeMenu(); });
 document.addEventListener("keydown", function(e){ if(e.key === "Escape" && mnav.classList.contains("open")){ closeMenu(); menuBtn.focus(); } });
 window.addEventListener("resize", function(){ if(window.innerWidth > 900 && mnav.classList.contains("open")) closeMenu(); });
+
+/* white bar lifts only once it sits on a light section */
+var hdr = document.querySelector(".hdr");
+var hdrTick = false;
+function headerLift(){
+  hdrTick = false;
+  var probe = document.elementFromPoint(Math.min(24, window.innerWidth - 8), hdr.getBoundingClientRect().bottom + 8);
+  var dark = false;
+  while(probe && probe !== document.documentElement){
+    var bg = getComputedStyle(probe).backgroundColor;
+    var m = bg && bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
+    if(m && (m[4] === undefined || parseFloat(m[4]) > 0.4)){
+      dark = (0.2126 * m[1] + 0.7152 * m[2] + 0.0722 * m[3]) < 90;
+      break;
+    }
+    probe = probe.parentElement;
+  }
+  hdr.classList.toggle("lift", !dark && window.scrollY > 8);
+}
+window.addEventListener("scroll", function(){ if(!hdrTick){ hdrTick = true; requestAnimationFrame(headerLift); } }, {passive:true});
+window.addEventListener("resize", headerLift);
+headerLift();
 
 /* reveal */
 if("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches){
