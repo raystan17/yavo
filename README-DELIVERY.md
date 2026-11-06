@@ -1,62 +1,114 @@
-﻿# YAVO site delivery
+# YAVO website. Delivery notes
 
-Brand picked by owner: **YAVO** (yavo.ca). Positioning and copy approved by owner before build.
-Stack: static HTML, no build step. Deploy: push this folder to GitHub, import to Vercel, connect yavo.ca from Porkbun.
+Static site. No build step, no framework, no dependencies. Everything that ships is plain HTML, CSS, JavaScript, fonts and images in this folder.
 
-## Files delivered
-- `index.html` : public one page site (hero, problem, free checkup form, includes, missed call text back demo, comparison, prices, how it works, proof, concept gallery, FAQ, final CTA, sticky mobile bar)
-- `privacy.html` : PIPEDA style privacy policy with placeholders
-- `thanks.html` : form thank you page, noindex
-- `demo-private-template/index.html` : private per prospect demo template, noindex meta, X-Robots-Tag in `vercel.json`, disallowed in `robots.txt`
-- `assets/morgan/` : real Morgan Exterior Solutions photos only, all WebP under 300 KB
-- `robots.txt`, `sitemap.xml`, `vercel.json`
+Live: https://yavo-web.vercel.app/
 
-## Placeholders the owner must fill before launch
-1. Form inbox: connected Nov 6, 2026 to `colesales@proton.me` via **FlowForm** (`https://flowform.to/colesales@proton.me`). Owner rule: FlowForm is what works, do NOT use FormSubmit. A live test POST on Nov 6, 2026 returned HTTP 200 `{"success":true}`. Check the Proton inbox for the test message. Standing rules saved in the owner notes.
-2. Domain: `yavo.ca` was not resolving, so canonical, Open Graph and sitemap URLs temporarily point to `https://yavo-web.vercel.app/` (updated Nov 6, 2026). Buy `yavo.ca` on Porkbun, connect it in Vercel, then switch those URLs back to `https://yavo.ca/` in `index.html`, `sitemap.xml` and `robots.txt`.
-3. Privacy page: updated Nov 6, 2026 with contact YAVO at `colesales@proton.me` and phone `204-901-2941` (confirmed by owner Nov 6, 2026). The number is published as tap to call in the hero, sticky mobile bar, FAQ, footer and privacy page.
-4. Business phone (optional): no public YAVO phone number was confirmed, so the sticky bar uses Free checkup and See prices instead of a call button. If a business number is confirmed, add a Call button and update the footer.
-5. Analytics: button and form events push to `window.dataLayer` with `data-event` names. Connect Google Analytics or Tag Manager before launch if tracking is wanted, and disclose analytics in the privacy policy.
-6. Morgan review quote (optional upgrade): the proof section states the verified 5.0 star fact. If a verbatim review is added, paste it word for word from Google with the reviewer name exactly as shown. Do not paraphrase it.
-7. Legal clearance for the name: web conflict checks were done, but run a CIPO trademark search and a NUANS name search for YAVO before printing signs, cards or vehicle graphics.
-8. French version: no text is baked into images. A future `/fr/` copy of the pages can reuse every asset. Do not machine publish French copy without a human review.
+## What is in the folder
 
-## How to edit prices (only confirmed public prices)
-Prices live in three places in `index.html`: the price cards in the Packages section, the total cost FAQ answer, and the JSON-LD offers in the head. Search the file for `1500`, `79` and `199` and update all three places together.
-Confirmed public prices at build time: Get Found build from $1,500 CAD, Care $79 CAD per month, Growth $199 CAD per month. Online booking and job tracking stay as ask for a quote until the owner confirms prices in writing.
-Never publish: family rates for any client, minimum terms, early exit fees, or internal costs and margins. They are not in this site. Keep them out of every future edit.
+| Path | What it is |
+| --- | --- |
+| `index.html` | The homepage. All styles and scripts are inline in this one file. |
+| `privacy.html` | Privacy policy (PIPEDA). Linked from the form consent text and the footer. |
+| `thanks.html` | Fallback thank-you page. Only reached if the browser cannot submit the form with JavaScript. `noindex`. |
+| `examples/<slug>/` | Twelve complete example websites for fictional businesses. Each is a full site with its own `assets/` folder. Linked from the example gallery. `noindex`. |
+| `assets/examples/` | Gallery thumbnails. `<slug>.webp` (960 wide), `<slug>-md.webp` (720), `<slug>-sm.webp` (480), plus `phone-clearwater*.webp` for the hero phone mock. |
+| `assets/brand/` | Logo kit. See below. |
+| `assets/fonts/` | Self-hosted fonts (Bricolage Grotesque for headings, Instrument Sans for body). OFL licensed, subset and instanced to keep them small. |
+| `assets/morgan/` | Real before and after photos from the Morgan Exterior Solutions job, used in the proof section. |
+| `demo-private-template/` | Blank template for private concept previews sent to one prospect. Not linked anywhere. `noindex`. |
+| `vercel.json` | Headers (security, caching, `X-Robots-Tag: noindex` for examples, thanks page and private template) and `trailingSlash`. |
+| `robots.txt`, `sitemap.xml`, `site.webmanifest` | Crawl rules, sitemap (homepage and privacy only), PWA manifest for the icons. |
 
-## Pre launch checks still to run on the live URL
-- Lighthouse on the live phone view (target 90 plus). It was not run in this build environment, so no score is claimed here.
-- Submit the checkup form once and confirm the email arrives and lands on `thanks.html`.
-- Tap every button on a 390 px phone: sticky bar, checkup form, before and after slider, gallery search and filters, missed call demo.
-- Confirm `yavo.ca/demo-private-template/` returns the X-Robots-Tag noindex header.
+## Deploy
 
-## Self critique, Phase 5 (2 revision rounds done)
-Scored as three readers. Below 90 meant revise.
+The site deploys from GitHub to Vercel automatically.
 
-Round 1 scores: skeptical trades owner 84, design judge 81, Toronto owner 87.
-What was weak: no clear way to ask for a human callback, form felt long, no comparison against doing it yourself or hiring a large agency, concept gallery cards were plain.
-Changes made: added a talk to a person FAQ plus an optional details field on the form, added the form takes about a minute note, added the Your other options comparison section, tightened gallery labelling and counts.
+1. Make your edit.
+2. `git add -A`
+3. `git commit -m "Describe the change"`
+4. `git push origin main`
 
-Round 2 scores after revision: skeptical trades owner 91, design judge 90, Toronto owner 92.
-Why they pass: the free Canada wide checkup and fixed prices are understood in the first screen, ownership and leaving are answered in plain language, real Morgan photos carry the proof with concepts clearly labelled, and Brandon appears only as base and first market.
-Known limit keeping scores from going higher: there is still no confirmed public phone number on the site (placeholder item 4 above), and the name still needs the legal clearance in item 7.
+`origin` pushes to both `raystan17/yavo` and `raystan17/yavo-web`. Vercel builds from the push within a minute or two. There is nothing to compile. If you ever need to deploy by hand, `npx vercel --prod` from this folder works too.
 
-## One page pitch playbook (checkups first, CASL compliant outreach only)
-Goal: sell the free checkup, never the website first. The demo and the checkup notes do the persuading.
+To preview locally, open `index.html` in a browser, or run any static server from this folder (for example `npx serve .`). Root-relative links such as `/examples/...` need a server, so use the server if you are checking the gallery.
 
-Who to pitch: local service owners from the concept batch (cleaning, trades, exterior, landscaping, restaurants) whose checkup notes show a real, fixable problem: no tap to call, not phone friendly, old or missing site, no quote form.
+## Change the prices
 
-Compliant first contact rules (CASL): only message businesses where you have consent, an existing business relationship, or a clearly published business contact address being contacted about their business role, with no prior opt out. Identify YAVO and yourself, give a working contact, and honour every stop or unsubscribe request right away and forever. No purchased consumer lists, no personal inboxes scraped from private pages, no repeated chasing. When in doubt, call or visit in person instead of emailing.
+Prices appear in three places. Keep them matching.
 
-The pitch, step by step:
-1. Lead with their checkup: one real finding, said kindly. Example opener: I checked how your business shows up on Google and on a phone. Your number is not tap to call, so phone customers have to copy it. I wrote up the top 3 fixes, free, want me to send it?
-2. Send the one page checkup and their private concept link together. The link is unlisted and noindex. Never post their current site problems publicly.
-3. On the call, open their concept on your phone, tap the call button, tap the quote form. Then open their current site and try the same thing. Let the owner feel the difference.
-4. Quote only the public prices: build from $1,500 CAD, Care $79 per month, Growth $199 per month. Booking and tracking are quoted after seeing how they run jobs. Put the exact price in writing.
-5. Close on ownership: your domain, your site, your photos. If you leave, you keep them.
-6. If they say no, leave the free fixes, thank them, mark do not contact if they ask, and move on. One polite follow up only where CASL allows it, then stop.
+1. **Price cards** in `index.html`, section `id="prices"`. Search for `class="amt"`. There are three: `$1,500`, `$79` and `$199`. The small text under each (`per month`, `one time, from`) is next to it.
+2. **FAQ answer** in `index.html`, section `id="faq"`. The first question, `How much will this cost me, in total?`, repeats the prices as plain text.
+3. **Structured data** near the top of `index.html` inside `<script type="application/ld+json">`. Search for `"price":"1500"`, `"price":"79"` and `"price":"199"`. Google reads these, so update them too.
 
-Daily routine: 5 checkups prepared, 5 first contacts, every reply answered the same day, every opt out logged. Track city by city so each new city gets its own fresh concept batch before outreach starts there.
+Booking systems and job tracking are deliberately "ask for a quote". Do not add a public price for them unless you are ready to honour it for everyone.
 
+## Change the phone number or email
+
+Search `index.html`, `privacy.html` and `thanks.html` for `204-901-2941`, `+12049012941` and `colesales@proton.me`. Replace all occurrences. The sticky mobile bar, header, footer, FAQ, form fallback text and structured data all use them.
+
+## The checkup form
+
+- Posts to FlowForm: `https://flowform.to/colesales@proton.me`. Never switch this to FormSubmit.
+- JavaScript submits in the background and shows an inline success message. If that fails with a network error, the browser falls back to a normal form post and FlowForm redirects to `/thanks.html`. If FlowForm answers with an error, the inline error message with the email and phone fallback appears.
+- Fields sent: name, phone, email, business, city, website, need, details, consent (yes), style (the example style the visitor picked, if any), `_subject`, `_source`.
+- The consent checkbox is required. Its wording and the privacy page together cover PIPEDA.
+- Tested end to end on 6 Nov 2026: FlowForm returned HTTP 200 and the inline success state showed.
+
+If FlowForm asks you to confirm the inbox the first time a message arrives, open the email from FlowForm and click the confirm link once.
+
+## Analytics
+
+Every tracked element has a `data-event` attribute, and the page pushes `{event, ...}` objects into `window.dataLayer`. Nothing else is installed. To turn on Google Analytics, add the GA4 or Google Tag Manager snippet in the `<head>` of `index.html` and the existing events will flow through.
+
+## The example gallery
+
+The gallery is driven by the `examples` array in the script at the bottom of `index.html`. Each entry is one card:
+
+```js
+{slug:"clearwater-cleaning", name:"Clearwater Cleaning Co.", trade:"Home and commercial cleaning", cat:"cleaning", style:"Clean & bright", blurb:"...", kw:"search words"}
+```
+
+To add an example:
+
+1. Build the site in `examples/<new-slug>/index.html`. Copy an existing one as a starting point. Keep the top banner (`Example website by YAVO. Not a live client business.` with the `Back to YAVO examples` link), the fictional business name, the `204-555-01xx` phone pattern, the town `Riverbend`, the disabled demo form and the `Sample review` labels.
+2. Use only photos you have the right to publish. The current examples use Unsplash photos.
+3. Take a screenshot of the top of the page at 1440 wide, crop to 960 by 600 (top aligned), save as `assets/examples/<new-slug>.webp`, plus 720 and 480 wide copies named `-md` and `-sm`.
+4. Add the entry to the `examples` array. `cat` must be one of `cleaning`, `trades`, `property`, `auto`, `food` (these are the filter buttons; labels live in `catLabel`).
+
+Rules that keep the gallery honest: every card must open a real working page, no card may describe a real client, and nothing in an example may claim results.
+
+Philco Cleaning and Ray's Cleaning are shown separately as a custom design demo and an early practice concept. They are not clients and are not counted as proof. If either URL ever stops working, remove its card.
+
+## Logo kit (`assets/brand/`)
+
+| File | Use |
+| --- | --- |
+| `yavo-logo.svg` | Primary wordmark with the orange dot. Navy on light backgrounds. |
+| `yavo-logo-white.svg` | Same, white, for navy or dark backgrounds. |
+| `yavo-logo-mono.svg`, `yavo-logo-mono-white.svg` | Single colour versions for print, embroidery, invoices. |
+| `yavo-lockup.svg`, `yavo-lockup-white.svg` | Wordmark with the tagline. |
+| `yavo-wordmark.svg`, `yavo-wordmark-white.svg` | Wordmark without the dot. |
+| `yavo-mark.svg`, `yavo-mark-white.svg`, `yavo-mark-mono.svg`, `yavo-mark-tile.svg` | The Y monogram alone. Tile version has the navy rounded square behind it. |
+| `favicon.svg`, `favicon-32.png` | Browser icons. |
+| `icon-192.png`, `icon-512.png`, `apple-touch-icon.png` | Home screen and manifest icons. |
+| `og-card.png` | 1200 by 630 social share image. |
+
+Colours: navy `#041E42`, orange `#FF4C00`, white `#FFFFFF`, off-white `#F4F7FB`. Orange is for the dot, the primary button, the eyebrow labels and small accents only. Buttons use navy text on orange so the contrast passes WCAG AA.
+
+Fonts: Bricolage Grotesque (headings, weight 700) and Instrument Sans (body). Both are SIL Open Font License. The files in `assets/fonts/` are subset to Latin and Latin Extended and instanced (width and optical size axes removed) to keep them small. If you need other weights, download the originals from Google Fonts and re-subset.
+
+## Placeholders and things to change later
+
+- **Domain.** The site is set up for `https://yavo-web.vercel.app/`. When `yavo.ca` is live and pointed at Vercel, search and replace `https://yavo-web.vercel.app` across `index.html`, `privacy.html`, `thanks.html`, `sitemap.xml`, `robots.txt` and `examples/*/index.html` (the `Back to YAVO examples` link uses a root-relative `/#examples` so it does not need changing).
+- **Proof.** Only Morgan Exterior Solutions appears as a real client, with permission. Add new proof only when you have a live client URL and the owner has agreed in writing. No review counts, ratings or client totals anywhere.
+- **Service area.** Copy says "across Canada" with Brandon, Manitoba as the base. Change the `addressLocality` in the structured data if the base moves.
+- **Privacy policy date.** Update the `Last updated` line in `privacy.html` whenever the policy changes.
+
+## Quality checks done before launch
+
+- Every internal link, anchor, gallery card (12 examples, Philco, Ray's, Morgan) checked at 1440 and 390 wide. No horizontal overflow, console clean.
+- Filters, search, empty state, mobile "Show all" button, "Use this style" picker, FAQ, before and after slider (mouse, touch and keyboard), missed-call demo, mobile menu and sticky call bar exercised.
+- Real FlowForm submission sent and received (HTTP 200).
+- Lighthouse (mobile): Accessibility 100, Best Practices 100, SEO 100. Performance depends on the hosting (Vercel compresses HTML, the local test server did not); check the live number with PageSpeed Insights at https://pagespeed.web.dev/ after each deploy.
+- No em dashes in the homepage copy. Example sites are fictional, carry the example banner, and contain no real business names, phone numbers, addresses or reviews.

@@ -1,7 +1,7 @@
 ﻿User-agent: *
 Allow: /
+Disallow: /examples/
 Disallow: /demo-private-template/
 Disallow: /thanks.html
 
 Sitemap: https://yavo-web.vercel.app/sitemap.xml
-
